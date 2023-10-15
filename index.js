@@ -9,6 +9,7 @@ app.use(express.json());
 
 // DB connection setup
 const dbConnect = async () => {
+  mongoose.set("strictQuery", false);
   try {
     await mongoose.connect(URL, {
       useNewUrlParser: true,
